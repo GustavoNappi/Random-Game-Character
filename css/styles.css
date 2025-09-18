@@ -1,0 +1,178 @@
+/* =========================
+   Reset básico
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Body / Fundo da página
+========================= */
+body {
+  background: linear-gradient(
+    117deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Header no topo + login abaixo */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* =========================
+   Header
+========================= */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;             /* ocupa toda largura */
+  height: 100px;
+  font-size: 2.5rem;
+  font-family: "Comic Sans MS", cursive;
+  text-align: center;
+  color: #a799b7;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hover animado do header */
+@keyframes balancaCores {
+  0% { color: #ff0000; transform: rotate(-2deg); }
+  25% { color: #00ff00; transform: rotate(2deg); }
+  50% { color: #0000ff; transform: rotate(-2deg); }
+  75% { color: #ffff00; transform: rotate(2deg); }
+  100% { color: #ff00ff; transform: rotate(0deg); }
+}
+
+.header:hover {
+  cursor: pointer;
+  animation: balancaCores 1s linear infinite;
+}
+
+/* =========================
+   Container de Login
+========================= */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* espaço abaixo do header */
+}
+
+/* =========================
+   Formulário de login
+========================= */
+.dadosPessoa {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 131, 237, 1) 82%,
+    rgba(78, 111, 177, 1) 100%,
+    rgba(91, 87, 199, 1) 95%,
+    rgba(124, 83, 237, 1) 89%
+  );
+}
+
+
+.dadosPessoa:hover {
+  cursor: pointer;
+  
+}
+
+/* Labels e placeholders */
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  font-family: monospace;
+  margin-bottom: 15px;
+}
+
+.dadosPessoa ::placeholder {
+  font-family: monospace;
+}
+
+/* =========================
+   Inputs
+========================= */
+input[type="text"] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 
+    background-color 0.4s ease-in-out, 
+    border-color 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out, 
+    transform 0.3s ease-in-out;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  background-color: #e0f0ff;
+  border-color: #3399ff;
+  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Botão submit */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: large;
+  font-family: monospace;
+  font-style: italic;
+  background-color: blue;
+  color: white;
+  border: none;
+  transition: 
+    box-shadow 0.6s ease-in-out, 
+    transform 0.3s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  cursor: pointer;
+  box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe;
+  transform: scale(1.05);
+}
+
+/* =========================
+   Textos extras (opcional)
+========================= */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  text-align: center;
+}
+
+.content p {
+  font-family: "Comic Sans MS", cursive;
+  color: #da4167;
+  font-size: 30px;
+}
